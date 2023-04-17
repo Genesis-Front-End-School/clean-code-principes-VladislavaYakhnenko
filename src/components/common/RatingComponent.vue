@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center gap-1.5">
     <span class="font-montserrat font-semibold text-gray-500 text-xl max-lg:text-lg max-md:text-base">
-      {{ getRating }}
+      {{ rating }}
     </span>
     <StarIcon/>
   </div>
@@ -18,8 +18,8 @@ const props = defineProps({
   }
 })
 
-const getRating = computed(() => {
-  return Number.isInteger(props.rating) ? props.rating + '.0' : props.rating;
+const rating = computed(() => {
+  return props.rating.toFixed(1);
 })
 </script>
 
